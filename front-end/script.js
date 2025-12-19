@@ -1,6 +1,16 @@
 const form = document.getElementById("consultaForm");
 const mensaje = document.getElementById("mensaje");
 
+// 🔧 Ajustar fecha mínima de egreso según ingreso
+form.fecha_desde.addEventListener("change", () => {
+  const fechaDesde = new Date(form.fecha_desde.value);
+  if (!isNaN(fechaDesde)) {
+    const minSalida = new Date(fechaDesde);
+    minSalida.setDate(minSalida.getDate() + 3); // +3 noches
+    form.fecha_hasta.min = minSalida.toISOString().split("T")[0];
+  }
+});
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
