@@ -15,7 +15,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const response = await fetch("https://formulario-contacto-mysql.onrender.com/", {
+    const response = await fetch("https://formulario-contacto-mysql.onrender.com/consulta", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
