@@ -4,6 +4,18 @@ const mensaje = document.getElementById("mensaje");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const fechaDesde = new Date(form.fecha_desde.value);
+  const fechaHasta = new Date(form.fecha_hasta.value);
+
+  // Calcular diferencia en días
+  const diffTime = fechaHasta - fechaDesde;
+  const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+  if (diffDays < 3) {
+    mensaje.textContent = "La estadía mínima es de 3 noches ⛔";
+    return; // corta el envío si no cumple
+  }
+
   const data = {
     nombre: form.nombre.value,
     apellido: form.apellido.value,
