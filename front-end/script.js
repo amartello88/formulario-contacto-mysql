@@ -1,5 +1,5 @@
 const form = document.getElementById("consultaForm");
-const mensaje = document.getElementById("mensaje"); // div para mostrar mensajes
+const mensaje = document.getElementById("mensaje");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -14,6 +14,8 @@ form.addEventListener("submit", async (e) => {
     consulta: form.consulta.value
   };
 
+  console.log("Datos enviados:", data);
+
   try {
     const response = await fetch("https://formulario-contacto-mysql.onrender.com/consulta", {
       method: "POST",
@@ -23,11 +25,14 @@ form.addEventListener("submit", async (e) => {
 
     if (!response.ok) throw new Error("Error en el envío");
 
-    mensaje.textContent = "Consulta enviada con éxito 💌";
+    const result = await response.json();
+    console.log("Respuesta del servidor:", result);
+
+    mensaje.textContent = "Consulta enviada con éxito 💌 (ID: " + result.id + ")";
     form.reset();
 
   } catch (error) {
-    console.error(error);
+    console.error("Error:", error);
     mensaje.textContent = "Hubo un error al enviar la consulta 😞";
   }
 });
