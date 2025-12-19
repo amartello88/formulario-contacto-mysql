@@ -3,7 +3,7 @@ import cors from "cors";
 import pool from "./db.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -67,6 +67,6 @@ app.post("/consulta", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
