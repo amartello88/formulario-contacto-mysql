@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="consulta">
+  <h2>Consultá disponibilidad</h2>
+
+  <form id="consultaForm">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Tu nombre"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="apellido">Apellido</label>
+      <input
+        type="text"
+        id="apellido"
+        name="apellido"
+        placeholder="Tu apellido"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="personas">Cantidad de personas</label>
+      <input
+        type="number"
+        id="personas"
+        name="personas"
+        min="1"
+        max="2"
+        placeholder="Ej: 2"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="mascotas">Mascotas</label>
+      <select id="mascotas" name="mascotas">
+        <option value="">Seleccionar</option>
+        <option value="no">No</option>
+        <option value="si">Sí</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="fecha_desde">Fecha de ingreso</label>
+      <input
+        type="date"
+        id="fecha_desde"
+        name="fecha_desde"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="fecha_hasta">Fecha de egreso</label>
+      <input
+        type="date"
+        id="fecha_hasta"
+        name="fecha_hasta"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="consulta">Consulta</label>
+      <textarea
+        id="consulta"
+        name="consulta"
+        rows="4"
+        placeholder="Contanos un poco más sobre tu estadía"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit">Enviar consulta</button>
+  </form>
+
+  <!-- Aquí se muestran los mensajes -->
+  <div id="mensaje"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

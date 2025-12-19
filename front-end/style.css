@@ -1,0 +1,94 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111;
+}
+
+/* Section */
+.consulta {
+  max-width: 520px;
+  margin: 80px auto;
+  padding: 32px;
+  border: 1px solid #e5e5e5;
+}
+
+/* Título */
+.consulta h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Form layout */
+#consultaForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#consultaForm div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+#consultaForm label {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Inputs */
+#consultaForm input,
+#consultaForm select,
+#consultaForm textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #111;
+  transition: border 0.2s ease;
+}
+
+#consultaForm input:focus,
+#consultaForm select:focus,
+#consultaForm textarea:focus {
+  outline: none;
+  border-color: #111;
+}
+
+/* Textarea */
+#consultaForm textarea {
+  resize: vertical;
+}
+
+/* Botón */
+#consultaForm button {
+  margin-top: 12px;
+  padding: 12px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#consultaForm button:hover {
+  background: #000;
+}
+#mensaje {
+  margin-top: 10px;      
+  text-align: center;     
+  font-weight: bold;      
+  color: green;          
+}
